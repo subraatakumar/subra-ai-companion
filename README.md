@@ -92,6 +92,10 @@ docker compose up -d
 
 For reproducible deployments, use a version tag instead of `latest` after versioned releases become available.
 
+## Publishing (maintainer only)
+
+The private source repository includes both a GitHub Actions release workflow and a local Docker Buildx publishing script. The local script produces the same multi-architecture image tags, provenance, and software bill of materials without requiring a GitHub-hosted runner. It requires a GitHub token with `write:packages` permission; that token is supplied at runtime and is never stored in the repository or container image.
+
 ## Troubleshooting
 
 If the application shows **Ollama offline**:
